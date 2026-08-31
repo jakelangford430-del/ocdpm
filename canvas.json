@@ -1,0 +1,11 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1280, "h": 800, "title": "Two-Column Layout" },
+    { "file": "Stacked.dc.html", "x": 1380, "y": 0, "w": 720, "h": 1200, "title": "Stacked Layout" }
+  ],
+  "annotations": [
+    { "id": "note-1", "x": 0, "y": -80, "w": 280, "text": "Equal height cards with proper alignment & consistent spacing" },
+    { "id": "note-2", "x": 1380, "y": -80, "w": 280, "text": "Mobile-friendly stacked version" }
+  ],
+  "launch": { "view": "canvas" }
+}
