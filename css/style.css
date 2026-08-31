@@ -507,6 +507,11 @@ footer p {
     grid-template-columns: 1fr;
   }
 
+  /* Platform cards responsive */
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
   .service-card {
     grid-template-columns: 1fr;
     gap: 1.5rem;
