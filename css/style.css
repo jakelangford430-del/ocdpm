@@ -4,18 +4,32 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --font-serif: 'Crimson Text', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-primary: #1a1a1a;
+  --color-secondary: #666;
+  --color-tertiary: #999;
+  --color-accent: #a08876;
+  --color-bg-light: #f5f3f1;
+  --color-bg-white: #ffffff;
+  --color-border: #e8e6e3;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  background-color: #f9f7f4;
+  font-family: var(--font-sans);
+  color: var(--color-primary);
+  background-color: var(--color-bg-light);
   line-height: 1.6;
 }
 
 /* Header & Navigation */
 header {
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   padding: 1.5rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -31,12 +45,13 @@ header {
 }
 
 .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  color: #000;
+  color: var(--color-primary);
+  text-transform: none;
 }
 
 .logo span {
@@ -53,16 +68,16 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #333;
-  font-size: 0.95rem;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.01em;
   transition: color 0.3s;
   position: relative;
 }
 
 nav a:hover {
-  color: #666;
+  color: var(--color-primary);
 }
 
 nav a.active::after {
@@ -72,32 +87,39 @@ nav a.active::after {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #000;
+  background-color: var(--color-accent);
 }
 
 .btn-book {
-  background-color: #000;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
+  background-color: var(--color-accent);
+  color: var(--color-bg-white);
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.35rem;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  transition: background-color 0.3s;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  transition: all 0.3s;
   border: none;
   cursor: pointer;
 }
 
 .btn-book:hover {
-  background-color: #333;
+  background-color: #8f7765;
+  transform: translateY(-1px);
 }
 
 /* Hero Section */
 .hero {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   text-align: center;
-  background-color: #f9f7f4;
+  background: linear-gradient(135deg, var(--color-bg-light) 0%, #faf8f6 100%);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 6rem 2rem;
+  }
 }
 
 .hero-container {
@@ -114,19 +136,33 @@ nav a.active::after {
 }
 
 .hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  line-height: 1.2;
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  line-height: 1.3;
   margin-bottom: 2rem;
-  color: #1a1a1a;
-  font-weight: 700;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
 }
 
 .hero p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 2.5rem;
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
   line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .hero-buttons {
@@ -137,49 +173,47 @@ nav a.active::after {
 }
 
 .btn-primary {
-  background-color: #000;
-  color: #fff;
-  padding: 1.1rem 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
+  padding: 1rem 2.2rem;
   border-radius: 0.35rem;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
   transition: all 0.3s;
-  border: 2px solid #000;
+  border: 2px solid var(--color-primary);
   cursor: pointer;
-  text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-transform: none;
 }
 
 .btn-primary:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--color-bg-white);
+  color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #000;
-  padding: 1.1rem 2.5rem;
-  border: 2px solid #000;
+  color: var(--color-primary);
+  padding: 1rem 2.2rem;
+  border: 2px solid var(--color-primary);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   transition: all 0.3s;
-  text-transform: uppercase;
+  text-transform: none;
   border-radius: 0.35rem;
 }
 
 .btn-secondary:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
   transform: translateY(-2px);
 }
 
@@ -190,7 +224,7 @@ nav a.active::after {
 /* About Section */
 .about-section {
   padding: 4rem 2rem;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
 }
 
 .about-container {
@@ -207,10 +241,18 @@ nav a.active::after {
 }
 
 .about-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .about-section .subtitle {
@@ -255,7 +297,7 @@ nav a.active::after {
 /* Services Section */
 .services-section {
   padding: 4rem 2rem;
-  background-color: #f9f7f4;
+  background-color: var(--color-bg-light);
 }
 
 .services-container {
@@ -269,10 +311,18 @@ nav a.active::after {
 }
 
 .services-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .services-header h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .services-header p {
@@ -287,13 +337,28 @@ nav a.active::after {
 }
 
 .service-card {
-  background-color: #fff;
-  padding: 2.5rem;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: var(--color-bg-white);
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   align-items: start;
+  transition: all 0.3s;
+}
+
+.service-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 16px rgba(160, 136, 118, 0.1);
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    grid-template-columns: 160px 1fr;
+    gap: 3rem;
+    padding: 2.5rem;
+  }
 }
 
 .service-number {
@@ -304,11 +369,19 @@ nav a.active::after {
 }
 
 .service-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--color-primary);
   line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .service-title {
+    font-size: 1.5rem;
+  }
 }
 
 .service-content p {
@@ -334,7 +407,7 @@ nav a.active::after {
 
 .feature::before {
   content: '✓';
-  color: #000;
+  color: var(--color-accent);
   font-weight: bold;
   flex-shrink: 0;
 }
@@ -342,7 +415,7 @@ nav a.active::after {
 /* Contact Section */
 .contact-section {
   padding: 4rem 2rem;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
 }
 
 .contact-container {
@@ -356,10 +429,18 @@ nav a.active::after {
 }
 
 .contact-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .contact-header h2 {
+    font-size: 2.5rem;
+  }
 }
 
 .contact-header p {
@@ -474,15 +555,15 @@ nav a.active::after {
 
 /* Footer */
 footer {
-  background-color: #f9f7f4;
+  background-color: var(--color-bg-light);
   padding: 2rem;
   text-align: center;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid var(--color-border);
 }
 
 footer p {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--color-tertiary);
 }
 
 /* Mobile Responsive */
