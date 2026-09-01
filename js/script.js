@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   setActiveNavigation();
   setupFormHandling();
+  setupScrollAnimations();
 });
 
 function setActiveNavigation() {
@@ -42,4 +43,37 @@ function scrollToSection(sectionId) {
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
+}
+
+function setupScrollAnimations() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('fade-in-scroll')) {
+          entry.target.classList.add('visible');
+        }
+        if (entry.target.classList.contains('stagger-item')) {
+          entry.target.classList.add('visible');
+        }
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in-scroll, .stagger-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  const staggerLists = document.querySelectorAll('.stagger-list');
+  staggerLists.forEach(list => {
+    const items = list.querySelectorAll('li, .feature, > div');
+    items.forEach((item, index) => {
+      item.classList.add('stagger-item');
+      item.style.animationDelay = (index * 0.1) + 's';
+    });
+  });
 }
