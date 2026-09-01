@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setActiveNavigation();
   setupFormHandling();
   setupScrollAnimations();
+  setupMobileMenu();
 });
 
 function setActiveNavigation() {
@@ -76,4 +77,24 @@ function setupScrollAnimations() {
       item.style.animationDelay = (index * 0.1) + 's';
     });
   });
+}
+
+function setupMobileMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const mobileLinks = document.querySelectorAll('.mobile-nav a');
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  }
 }
