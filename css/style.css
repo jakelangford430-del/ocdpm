@@ -67,7 +67,7 @@ body {
 /* Header & Navigation */
 header {
   background-color: var(--color-bg-white);
-  padding: 1.5rem 0;
+  padding: 1.75rem 0;
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
@@ -135,15 +135,16 @@ nav a.active::after {
 .btn-book {
   background-color: var(--color-accent);
   color: var(--color-bg-white);
-  padding: 0.7rem 1.4rem;
+  padding: 0.7rem 1.6rem;
   border-radius: 0.35rem;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 0.02em;
   transition: all 0.3s;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .btn-book:hover {
