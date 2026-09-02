@@ -625,3 +625,182 @@ footer p {
     font-size: 1.25rem;
   }
 }
+
+/* Mobile Image Stacking Fix */
+@media (max-width: 767px) {
+  img[style*="float"] {
+    float: none !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 1.5rem 0 !important;
+  }
+}
+
+/* Software Expertise Timeline */
+.software-timeline {
+  position: relative;
+  padding: 0;
+}
+
+.software-timeline::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-accent) 70%, transparent 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 120px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 25px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-bg-white);
+  border: 3px solid var(--color-accent);
+  z-index: 10;
+}
+
+.timeline-item.featured::before {
+  width: 36px;
+  height: 36px;
+  left: 22px;
+  top: 5px;
+  background-color: var(--color-accent);
+}
+
+.timeline-item.featured .platform-card {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(160, 136, 118, 0.15);
+}
+
+.platform-card {
+  background-color: var(--color-bg-white);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s;
+}
+
+.platform-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.platform-name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.platform-role {
+  font-size: 0.9rem;
+  color: #00A9CE;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.platform-description {
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.platform-features {
+  background-color: var(--color-bg-light);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.platform-features-label {
+  font-size: 0.8rem;
+  color: var(--color-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.platform-features ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+}
+
+.platform-features li {
+  margin-bottom: 0.6rem;
+}
+
+.platform-features li:last-child {
+  margin-bottom: 0;
+}
+
+.platform-features span {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.timeline-item.beyond::before {
+  left: 26px;
+  top: 10px;
+  width: 28px;
+  height: 28px;
+  border-width: 2px;
+}
+
+.beyond-card {
+  background-color: var(--color-bg-light);
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+}
+
+.beyond-card p {
+  font-size: 1rem;
+  color: var(--color-secondary);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .software-timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item {
+    padding-left: 80px;
+  }
+
+  .timeline-item::before {
+    left: 17px;
+  }
+
+  .timeline-item.featured::before {
+    left: 14px;
+  }
+
+  .platform-card,
+  .beyond-card {
+    padding: 1.5rem;
+  }
+
+  .platform-name {
+    font-size: 1.2rem;
+  }
+}
